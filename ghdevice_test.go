@@ -296,6 +296,9 @@ func TestPost(t *testing.T) {
 					t.Errorf("User-Agent = %q; want %q", got, userAgent)
 				}
 				got, err := url.ParseQuery(string(body))
+				if err != nil {
+					t.Error("Parse request body:", err)
+				}
 				if diff := cmp.Diff(want, got); diff != "" {
 					t.Errorf("body values (-want +got):\n%s", diff)
 				}
