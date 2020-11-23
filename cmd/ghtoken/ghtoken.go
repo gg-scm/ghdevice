@@ -22,11 +22,9 @@ import (
 	"fmt"
 	"net/url"
 	"os"
-	"os/signal"
 	"strings"
 
 	"gg-scm.io/pkg/ghdevice"
-	"golang.org/x/sys/unix"
 )
 
 func main() {
@@ -56,8 +54,7 @@ func main() {
 
 	ctx, cancel := context.WithCancel(context.Background())
 	signals := make(chan os.Signal, 1)
-	signal.Notify(signals, unix.SIGTERM, unix.SIGINT)
-	signal.Ignore(unix.SIGPIPE)
+	setupSignals(signals)
 	go func() {
 		<-signals
 		cancel()
