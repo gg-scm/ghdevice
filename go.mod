@@ -20,5 +20,7 @@ go 1.15
 
 require (
 	github.com/google/go-cmp v0.5.3
+	github.com/google/go-github/v32 v32.1.0
+	golang.org/x/oauth2 v0.0.0-20201109201403-9fd604954f58
 	golang.org/x/sys v0.0.0-20201119102817-f84b799fce68
 )
