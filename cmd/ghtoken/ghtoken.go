@@ -14,6 +14,8 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
+// ghtoken is a small CLI that uses ghdevice.Flow to obtain a
+// GitHub access token.
 package main
 
 import (
